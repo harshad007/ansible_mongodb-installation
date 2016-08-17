@@ -1,0 +1,9 @@
+# mongoDB installation on UBUNTU 14.04
+---
+- hosts: prim 
+  remote_user: ubuntu
+  become: yes
+  become_method: sudo
+  tasks:
+  roles:
+    - installmongo
