@@ -1,0 +1,16 @@
+# installation steps for mongoDB YAML code
+
+- name: update the system
+  command: "apt-get update"
+
+- name: install mongoDB
+  apt: name=mongodb-server state=present
+  notify:
+  - start mongodb service
+
+- name: verify mongoDB status
+  service: name=mongodb state=running
+  register: result
+
+- name: check mongodb service status output
+  debug: var=result

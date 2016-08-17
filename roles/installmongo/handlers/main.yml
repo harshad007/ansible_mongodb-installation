@@ -1,0 +1,5 @@
+# handler file when mongodb is installed; to start mongosb service
+
+---
+- name: start mongodb service
+  service: name=mongodb state=started
